@@ -1,17 +1,24 @@
-<script setup>
+<script>
 import HelloWorld from './components/HelloWorld.vue'
+import TicTacToe from './components/TicTacToe.vue'
+
+import {mapState} from 'vuex'
+
+export default {
+  name: 'App',
+  components: {
+    TicTacToe
+  },
+  computed: {
+    ...mapState(['user'])
+  }
+}
+
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <!-- <HelloWorld msg="Vite + Vue" /> -->
+  <TicTacToe />
 </template>
 
 <style scoped>

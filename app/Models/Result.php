@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Result extends Model
 {
     use HasFactory;
+
+    protected $table = 'results';
+
+    protected $fillable = [
+        'moves',
+        'winner_name'
+    ];
 }

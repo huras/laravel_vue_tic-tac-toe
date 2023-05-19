@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TicTacToeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('tic-tac-toe');
-});
+Route::get('/', [TicTacToeController::class, 'GameScreen']);
+Route::get('/results', [TicTacToeController::class, 'index'])->name('index.results');

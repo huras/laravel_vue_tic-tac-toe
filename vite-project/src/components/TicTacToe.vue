@@ -1,5 +1,7 @@
 <template>
     <div class="tic-tac-toe">
+        <p> {{currentPlayer == 'X' ? '♦' : '◊' }} Player "X": {{ player1Name }}</p>
+        <p> {{currentPlayer == 'O' ? '♦' : '◊' }} Player "O": {{ player2Name }}</p>
         <div class="board">
             <div v-for="(cell, index) in cells" :key="index" class="cell" @click="makeMove(index)">
                 {{ cell }}
@@ -15,6 +17,16 @@
 import Cell from './TicTacToeCell.vue';
 
 export default {
+    props: {
+        player1Name: {
+            type: String,
+            required: true,
+        },
+        player2Name: {
+            type: String,
+            required: true,
+        },
+    },
     components: {
         Cell,
     },

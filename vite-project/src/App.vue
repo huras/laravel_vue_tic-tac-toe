@@ -1,5 +1,5 @@
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Game from './components/Game.vue'
 import TicTacToe from './components/TicTacToe.vue'
 
 import {mapState} from 'vuex'
@@ -7,6 +7,7 @@ import {mapState} from 'vuex'
 export default {
   name: 'App',
   components: {
+    Game,
     TicTacToe
   },
   computed: {
@@ -17,8 +18,8 @@ export default {
 </script>
 
 <template>
-  <!-- <HelloWorld msg="Vite + Vue" /> -->
-  <TicTacToe />
+  <Game/>
+  <!-- <TicTacToe /> -->
 </template>
 
 <style scoped>

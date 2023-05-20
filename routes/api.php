@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/last5results', [TicTacToeController::class, 'last5results']);
-Route::post('/results', [TicTacToeController::class, 'store']);
+Route::post('/store-results', [TicTacToeController::class, 'store']);

@@ -12,7 +12,6 @@ class Result extends Model
     protected $table = 'results';
 
     protected $fillable = [
-        'moves',
-        'winner_name'
+        'player_name',
     ];
 }

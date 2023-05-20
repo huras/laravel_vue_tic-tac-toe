@@ -18,6 +18,10 @@ import Cell from './TicTacToeCell.vue';
 
 export default {
     props: {
+        storeResult: {
+            type: Function,
+            required: true,
+        },
         player1Name: {
             type: String,
             required: true,
@@ -44,6 +48,9 @@ export default {
                 this.cells.splice(index, 1, this.currentPlayer);
                 if (this.checkWin(this.currentPlayer)) {
                     this.winner = this.currentPlayer;
+                    this.storeResult({
+                        player_name: this.winner === 'X' ? this.player1Name : this.player2Name
+                    });
                 } else if (!this.cells.includes(null)) {
                     this.isDraw = true;
                 } else {

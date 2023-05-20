@@ -1,6 +1,5 @@
 <script>
 import Game from './components/Game.vue'
-import axios from 'axios';
 
 import { mapState } from 'vuex'
 
@@ -16,21 +15,7 @@ export default {
     },
     computed: {
         ...mapState(['user'])
-    },
-    mounted() {
-        this.fetchDataFromLaravel();
-    },
-    methods: {
-        fetchDataFromLaravel() {
-            axios.get('http://localhost:8000/api/last5results')
-                .then(response => {
-                    this.dataFromLaravel = response.data;
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-        },
-    },
+    }
 }
 
 </script>

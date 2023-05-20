@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 class TicTacToeController extends Controller
 {
     public function GameScreen(){
-        // $last5 = Result::latest()->take(5)->get();
         return view('tic-tac-toe');
     }
 

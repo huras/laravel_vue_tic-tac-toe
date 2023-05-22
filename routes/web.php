@@ -14,5 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [TicTacToeController::class, 'GameScreen']);
-Route::get('/results', [TicTacToeController::class, 'index'])->name('index.results');
+Route::get('/{any}', [TicTacToeController::class, 'GameScreen'])->where('any', '.*');

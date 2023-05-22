@@ -16,9 +16,13 @@ class TicTacToeController extends Controller
         return response()->json(['last5' => $last5]);
     }
 
-    public function index(){
-        $results = Result::all();
-        return view('results.index', compact('results'));
+    public function getResults(){
+        $page = request()->input('page', 1);
+        $itemsPerPage = request()->input('itemsPerPage', 10);
+
+        $results = Result::paginate($itemsPerPage, ['*'], 'page', $page);
+
+        return response()->json(['results' => $results]);
     }
 
     public function store(Request $request){

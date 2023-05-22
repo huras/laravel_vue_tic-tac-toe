@@ -2,8 +2,8 @@
     <div>
         <input type="text" v-model="player1Name" placeholder="Player 1 name" />
         <input type="text" v-model="player2Name" placeholder="Player 2 name" />
-        <button @click="startGame">Start</button>
     </div>
+    <button class="game-button" @click="startGame">Start</button>
 </template>
 
 <script>
@@ -22,3 +22,12 @@ export default {
     },
 };
 </script>
+
+<style>
+.game-button{
+    margin-top: 10px;
+    padding: 6px;
+    background-color: #4CAF50;
+    width: 100%;
+}
+</style>
